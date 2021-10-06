@@ -14,3 +14,7 @@ use university_profile;
 
 -- 5. Use the group by followed by order by followed by limit to show ‘team’ and ‘avg(sci)’ columns of the top two teams with highest average in science.
    select team, avg(sci) from student group by team order by avg(sci) limit 0,2;
+   
+   
+   
+   
