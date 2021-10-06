@@ -1,7 +1,7 @@
 use university_profile;
 
 -- 1. For a certain event only students who belong to team R or are females are allowed to participate. Find the list of students eligible. (Union)
-   select name, rollno from student where team = 'R' UNION select name, rollno from student where gender = 'F';
+   select name, rollno from student where team = 'R' union select name, rollno from student where gender = 'F';
 
 -- 2. Display count of students in each team. (group by)
    select team, count(rollno) as student_count from student group by team;
