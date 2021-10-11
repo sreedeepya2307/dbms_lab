@@ -6,6 +6,7 @@ use university_profile;
   create table marks_sem1 select rollno,math,sci,eng,social,sports from student order by rollno;
 --c. Make roll number the primary key
   alter table marks_sem1 add primary key(rollno);
+  desc marks_sem1;
 
 #2. Design a table faculty
 --a. Add columns and rows with given constraints
@@ -13,7 +14,7 @@ use university_profile;
     insert into faculty values('kakashi','4003','math');
     insert into faculty values('guy','5002','sports');
     insert into faculty values('kurenai','5038','eng');
-
+    desc faculty;
 #3. Design a table sem1
 --a. Add columns and rows with given constraints
 --b. Note - if the “mul” doesn't show up with you run “describe sem1;” then add a few rows and then alter the table
@@ -21,7 +22,7 @@ use university_profile;
   	insert into sem1 values('101','math','4003',60,101);
     insert into sem1 values('102','sports','5002',70,101);
     insert into sem1 values('105','eng','5038',60,104);
-
+    desc sem1;
 #4. Update campus table
 --a. Make cid primary key
   alter table campus add primary key(cid);
@@ -51,7 +52,7 @@ alter table student add foreign key ( rollno ) references marks_sem1 (rollno);
    update student set cid = 107 where rollno = 21;
 --d. Add fk to cid to campus cid
   alter table student add foreign key(cid) references campus(cid);
-
+  desc student;
 
 
 
